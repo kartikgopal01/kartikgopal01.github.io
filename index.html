@@ -49,7 +49,7 @@
           transform: scale(1);
         }
         50% {
-          transform: scale(1.05);
+          transform: scale(1.01);
         }
       }
     </style>
@@ -346,8 +346,6 @@
         cursor.style.left = e.clientX + "px";
         cursor.style.top = e.clientY + "px";
       });
-
-      // Three.js Background
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(
         75,
