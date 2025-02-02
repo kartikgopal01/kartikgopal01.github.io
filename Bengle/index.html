@@ -1,255 +1,263 @@
 <!DOCTYPE html>
 <html lang="kn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ನಮ್ಮ ಬೆಂಗಳೇ- ಇತಿಹಾಸದ ಪುಟಗಳು</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+Kannada:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --parchment: #f4e1c1;
-            --ink: #2c1e16;
-            --accent: #8b4513;
-            --gold: #d4af37;
-        }
-        
-        body {
-            font-family: 'Noto Sans Kannada', serif;
-            background-color: var(--parchment);
-            color: var(--ink);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--accent);
-            color: var(--parchment);
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        nav {
-            background-color: var(--ink);
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: var(--parchment);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--gold);
-        }
-
-        section {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border: 2px solid var(--accent);
-            border-radius: 10px;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin: 10px;
-            border: 5px solid var(--accent);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: var(--ink);
-            color: var(--parchment);
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        .dropdown {
-            display: none;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--ink);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: var(--parchment);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {
-            background-color: var(--accent);
-        }
-
-        .show {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .dropdown {
-                display: block;
-                text-align: center;
-            }
-
-            .dropbtn {
-                background-color: var(--accent);
-                color: var(--parchment);
-                padding: 16px;
-                font-size: 16px;
-                border: none;
-                cursor: pointer;
-            }
-
-            .dropbtn:hover, .dropbtn:focus {
-                background-color: var(--gold);
-            }
-
-            .gallery img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ಬೆಂಗಲೆ ಗ್ರಾಮ | Bengale Village</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Kannada', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .language-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-toggle button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .language-toggle button:hover {
+      background-color: #575757;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    .hero-image {
+      background-image: url('https://via.placeholder.com/1200x400'); /* Replace with village image */
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px #000;
+    }
+    section {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    section h2 {
+      color: #4CAF50;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 10px;
+    }
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .image-grid img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>ನಮ್ಮ ಬೆಂಗಳೇ - ಇತಿಹಾಸದ ಪುಟಗಳು</h1>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home">ಮುಖಪುಟ</a></li>
-                <li><a href="#about">ಪರಿಚಯ</a></li>
-                <li><a href="#history">ಇತಿಹಾಸ</a></li>
-                <li><a href="#gallery">ಗ್ಯಾಲರಿ</a></li>
-            </ul>
-            <div class="dropdown">
-                <button onclick="toggleDropdown()" class="dropbtn">ಮೆನು</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#home">ಮುಖಪುಟ</a>
-                    <a href="#about">ಪರಿಚಯ</a>
-                    <a href="#history">ಇತಿಹಾಸ</a>
-                    <a href="#gallery">ಗ್ಯಾಲರಿ</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <section id="home">
-            <h2>ಸ್ವಾಗತ</h2>
-            <p>ನಮ್ಮ ಬೆಂಗಳೇ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಸುಸ್ವಾಗತ - ಇತಿಹಾಸ, ಸಂಸ್ಕೃತಿ, ಪ್ರವಾಸೋದ್ಯಮ, ಎಲ್ಲವೂ ಒಂದೆಡೆ!</p>
-        </section>
-
-        <section id="about">
-            <h2>ಪರಿಚಯ</h2>
-            <p>ಬೆಂಗಳೇ ಇದು ಒಂದು ಗ್ರಾಮವಾಗಿದೆ ,ಸಿರ್ಸಿ ತಾಲೂಕು ,ಉತ್ತರ ಕನ್ನಡ ಜಿಲ್ಲೆ ,ಕರ್ನಾಟಕ ರಾಜ್ಯದಲ್ಲಿರುವ ಈ ಗ್ರಾಮವು ಕದಂಬರು ಆಳಿ ಹೋದ ಪ್ರದೇಶದಲ್ಲಿ ಒಂದಾಗಿದೆ </p>
-        </section>
-
-        <section id="history">
-            <h2>ಇತಿಹಾಸ</h2>
-            <p>idinna haakbeku.</p>
-        </section>
-
-        <section id="gallery">
-            <h2>ಗ್ಯಾಲರಿ</h2>
-            <div class="gallery">
-                <img src="image.png" alt="ಬೆಂಗಳೇ">
-                <img src="img2.jpg" alt="ಬೆಂಗಳೇ">
-                <img src="image.png" alt="ಬೆಂಗಳೇ">
-                <img src="image.png"ಬೆಂಗಳೇ">
-            </div>
-        </section>
+  <header>
+    <h1 id="welcome-title">ಬೆಂಗಲೆ ಗ್ರಾಮಕ್ಕೆ ಸ್ವಾಗತ</h1>
+    <div class="language-toggle">
+      <button onclick="toggleLanguage('kn')">ಕನ್ನಡ</button>
+      <button onclick="toggleLanguage('en')">English</button>
     </div>
+  </header>
+  <nav>
+    <a href="#home" id="nav-home">ಮುಖಪುಟ</a>
+    <a href="#history" id="nav-history">ಗ್ರಾಮದ ಇತಿಹಾಸ</a>
+    <a href="#school" id="nav-school">ಗ್ರಾಮದ ಶಾಲೆ</a>
+    <a href="#people" id="nav-people">ಜನರು</a>
+    <a href="#nature" id="nav-nature">ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ</a>
+    <a href="#contact" id="nav-contact">ಸಂಪರ್ಕಿಸಿ</a>
+  </nav>
+  <div class="hero-image">
+    <h2 id="hero-text">ನಮ್ಮ ಗ್ರಾಮದ ಸೌಂದರ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ</h2>
+  </div>
+  <section id="home">
+    <h2 id="home-title">ಮುಖಪುಟ</h2>
+    <p id="home-text">ಬೆಂಗಲೆ ಗ್ರಾಮಕ್ಕೆ ಸ್ವಾಗತ! ಇಲ್ಲಿ ನೀವು ನಮ್ಮ ಗ್ರಾಮದ ಇತಿಹಾಸ, ಶಾಲೆ, ಜನರು ಮತ್ತು ಪ್ರಕೃತಿಯ ಬಗ್ಗೆ ತಿಳಿಯಬಹುದು.</p>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/300x200" alt="Village Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="Village Image 2">
+      <img src="https://via.placeholder.com/300x200" alt="Village Image 3">
+    </div>
+  </section>
+  <section id="history">
+    <h2 id="history-title">ಗ್ರಾಮದ ಇತಿಹಾಸ</h2>
+    <p id="history-text">ಬೆಂಗಲೆ ಗ್ರಾಮದ ಇತಿಹಾಸ ಬಹಳ ಹಳೆಯದು ಮತ್ತು ಸಮೃದ್ಧವಾಗಿದೆ. ಇಲ್ಲಿ ಹಲವಾರು ಪೀಳಿಗೆಯವರು ವಾಸಿಸುತ್ತಿದ್ದಾರೆ.</p>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/300x200" alt="History Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="History Image 2">
+    </div>
+  </section>
+  <section id="school">
+    <h2 id="school-title">ಗ್ರಾಮದ ಶಾಲೆ</h2>
+    <p id="school-text">ನಮ್ಮ ಗ್ರಾಮದ ಶಾಲೆ ಉತ್ತಮ ಶಿಕ್ಷಣ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದೆ. ಇಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಗಳು ಉನ್ನತ ಶಿಕ್ಷಣ ಪಡೆಯುತ್ತಾರೆ.</p>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/300x200" alt="School Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="School Image 2">
+    </div>
+  </section>
+  <section id="people">
+    <h2 id="people-title">ಜನರು</h2>
+    <p id="people-text">ಬೆಂಗಲೆ ಗ್ರಾಮದ ಜನರು ಸ್ನೇಹಶೀಲರು ಮತ್ತು ಕಷ್ಟಪಟ್ಟು ದುಡಿಯುವವರು. ಇಲ್ಲಿ ವಿವಿಧ ಸಂಸ್ಕೃತಿಗಳ ಜನರು ಸಾಮರಸ್ಯದಿಂದ ವಾಸಿಸುತ್ತಿದ್ದಾರೆ.</p>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/300x200" alt="People Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="People Image 2">
+    </div>
+  </section>
+  <section id="nature">
+    <h2 id="nature-title">ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ</h2>
+    <p id="nature-text">ನಮ್ಮ ಗ್ರಾಮದ ಪ್ರಕೃತಿ ಸುಂದರವಾಗಿದೆ. ಹಸಿರು ಮೈದಾನಗಳು, ನದಿಗಳು ಮತ್ತು ಕಾಡುಗಳು ಇವೆ. ಇಲ್ಲಿ ಪ್ರಕೃತಿ ಪ್ರೇಮಿಗಳಿಗೆ ಸ್ವರ್ಗ ಸಮಾನ.</p>
+    <div class="image-grid">
+      <img src="https://via.placeholder.com/300x200" alt="Nature Image 1">
+      <img src="https://via.placeholder.com/300x200" alt="Nature Image 2">
+      <img src="https://via.placeholder.com/300x200" alt="Nature Image 3">
+    </div>
+  </section>
+  <section id="contact">
+    <h2 id="contact-title">ಸಂಪರ್ಕಿಸಿ</h2>
+    <form>
+      <label for="name" id="label-name">ಹೆಸರು:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email" id="label-email">ಇಮೇಲ್:</label><br>
+      <input type="email" id="email" name="email" required><br>
+      <label for="message" id="label-message">ಸಂದೇಶ:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br>
+      <input type="submit" id="submit-button" value="ಕಳುಹಿಸಿ">
+    </form>
+  </section>
+  <footer>
+    <p id="footer-text">&copy; 2023 ಬೆಂಗಲೆ ಗ್ರಾಮ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಪಾಡಲಾಗಿದೆ.</p>
+  </footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ನಮ್ಮ ಬೆಂಗಳೇ. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</p>
-        </div>
-    </footer>
+  <script>
+    // Language content
+    const content = {
+      kn: {
+        welcomeTitle: "ಬೆಂಗಲೆ ಗ್ರಾಮಕ್ಕೆ ಸ್ವಾಗತ",
+        heroText: "ನಮ್ಮ ಗ್ರಾಮದ ಸೌಂದರ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ",
+        navHome: "ಮುಖಪುಟ",
+        navHistory: "ಗ್ರಾಮದ ಇತಿಹಾಸ",
+        navSchool: "ಗ್ರಾಮದ ಶಾಲೆ",
+        navPeople: "ಜನರು",
+        navNature: "ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ",
+        navContact: "ಸಂಪರ್ಕಿಸಿ",
+        homeTitle: "ಮುಖಪುಟ",
+        homeText: "ಬೆಂಗಲೆ ಗ್ರಾಮಕ್ಕೆ ಸ್ವಾಗತ! ಇಲ್ಲಿ ನೀವು ನಮ್ಮ ಗ್ರಾಮದ ಇತಿಹಾಸ, ಶಾಲೆ, ಜನರು ಮತ್ತು ಪ್ರಕೃತಿಯ ಬಗ್ಗೆ ತಿಳಿಯಬಹುದು.",
+        historyTitle: "ಗ್ರಾಮದ ಇತಿಹಾಸ",
+        historyText: "ಬೆಂಗಲೆ ಗ್ರಾಮದ ಇತಿಹಾಸ ಬಹಳ ಹಳೆಯದು ಮತ್ತು ಸಮೃದ್ಧವಾಗಿದೆ. ಇಲ್ಲಿ ಹಲವಾರು ಪೀಳಿಗೆಯವರು ವಾಸಿಸುತ್ತಿದ್ದಾರೆ.",
+        schoolTitle: "ಗ್ರಾಮದ ಶಾಲೆ",
+        schoolText: "ನಮ್ಮ ಗ್ರಾಮದ ಶಾಲೆ ಉತ್ತಮ ಶಿಕ್ಷಣ ಮತ್ತು ಸಾಧನೆಗಳಿಗೆ ಹೆಸರುವಾಸಿಯಾಗಿದೆ. ಇಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಗಳು ಉನ್ನತ ಶಿಕ್ಷಣ ಪಡೆಯುತ್ತಾರೆ.",
+        peopleTitle: "ಜನರು",
+        peopleText: "ಬೆಂಗಲೆ ಗ್ರಾಮದ ಜನರು ಸ್ನೇಹಶೀಲರು ಮತ್ತು ಕಷ್ಟಪಟ್ಟು ದುಡಿಯುವವರು. ಇಲ್ಲಿ ವಿವಿಧ ಸಂಸ್ಕೃತಿಗಳ ಜನರು ಸಾಮರಸ್ಯದಿಂದ ವಾಸಿಸುತ್ತಿದ್ದಾರೆ.",
+        natureTitle: "ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ",
+        natureText: "ನಮ್ಮ ಗ್ರಾಮದ ಪ್ರಕೃತಿ ಸುಂದರವಾಗಿದೆ. ಹಸಿರು ಮೈದಾನಗಳು, ನದಿಗಳು ಮತ್ತು ಕಾಡುಗಳು ಇವೆ. ಇಲ್ಲಿ ಪ್ರಕೃತಿ ಪ್ರೇಮಿಗಳಿಗೆ ಸ್ವರ್ಗ ಸಮಾನ.",
+        contactTitle: "ಸಂಪರ್ಕಿಸಿ",
+        labelName: "ಹೆಸರು:",
+        labelEmail: "ಇಮೇಲ್:",
+        labelMessage: "ಸಂದೇಶ:",
+        submitButton: "ಕಳುಹಿಸಿ",
+        footerText: "&copy; 2023 ಬೆಂಗಲೆ ಗ್ರಾಮ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಪಾಡಲಾಗಿದೆ."
+      },
+      en: {
+        welcomeTitle: "Welcome to Bengale Village",
+        heroText: "The Beauty and Culture of Our Village",
+        navHome: "Home",
+        navHistory: "Village History",
+        navSchool: "Village School",
+        navPeople: "People",
+        navNature: "Nature and Environment",
+        navContact: "Contact Us",
+        homeTitle: "Home",
+        homeText: "Welcome to Bengale Village! Here you can learn about our village's history, school, people, and nature.",
+        historyTitle: "Village History",
+        historyText: "The history of Bengale Village is very old and rich. Many generations have lived here.",
+        schoolTitle: "Village School",
+        schoolText: "Our village school is renowned for its excellent education and achievements. Students receive high-quality education here.",
+        peopleTitle: "People",
+        peopleText: "The people of Bengale Village are friendly and hardworking. People from various cultures live here in harmony.",
+        natureTitle: "Nature and Environment",
+        natureText: "The nature of our village is beautiful. There are green fields, rivers, and forests. It's a paradise for nature lovers.",
+        contactTitle: "Contact Us",
+        labelName: "Name:",
+        labelEmail: "Email:",
+        labelMessage: "Message:",
+        submitButton: "Submit",
+        footerText: "&copy; 2023 Bengale Village. All rights reserved."
+      }
+    };
 
-    <script>
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+    // Function to toggle language
+    function toggleLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById("welcome-title").textContent = content[lang].welcomeTitle;
+      document.getElementById("hero-text").textContent = content[lang].heroText;
+      document.getElementById("nav-home").textContent = content[lang].navHome;
+      document.getElementById("nav-history").textContent = content[lang].navHistory;
+      document.getElementById("nav-school").textContent = content[lang].navSchool;
+      document.getElementById("nav-people").textContent = content[lang].navPeople;
+      document.getElementById("nav-nature").textContent = content[lang].navNature;
+      document.getElementById("nav-contact").textContent = content[lang].navContact;
+      document.getElementById("home-title").textContent = content[lang].homeTitle;
+      document.getElementById("home-text").textContent = content[lang].homeText;
+      document.getElementById("history-title").textContent = content[lang].historyTitle;
+      document.getElementById("history-text").textContent = content[lang].historyText;
+      document.getElementById("school-title").textContent = content[lang].schoolTitle;
+      document.getElementById("school-text").textContent = content[lang].schoolText;
+      document.getElementById("people-title").textContent = content[lang].peopleTitle;
+      document.getElementById("people-text").textContent = content[lang].peopleText;
+      document.getElementById("nature-title").textContent = content[lang].natureTitle;
+      document.getElementById("nature-text").textContent = content[lang].natureText;
+      document.getElementById("contact-title").textContent = content[lang].contactTitle;
+      document.getElementById("label-name").textContent = content[lang].labelName;
+      document.getElementById("label-email").textContent = content[lang].labelEmail;
+      document.getElementById("label-message").textContent = content[lang].labelMessage;
+      document.getElementById("submit-button").value = content[lang].submitButton;
+      document.getElementById("footer-text").innerHTML = content[lang].footerText;
+    }
 
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    // Default language
+    toggleLanguage('kn');
+  </script>
 </body>
 </html>
