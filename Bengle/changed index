@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ಬೆಂಗಳೆ - ನಮ್ಮ ಗ್ರಾಮದ ಸೌಂದರ್ಯ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/playfair-display/4.0.0/playfair-display.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5f3;
+            text-align: center;
+            position: relative;
+        }
+        
+        .background-image {
+            background: url('hero.jpg') no-repeat center center / cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            filter: blur(1px) brightness(80%);
+        }
+        .background-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px 40px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #5a3b3b;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5a3b3b;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .btn {
+            background: #5a3b3b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 78vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-text {
+            font-size: 150px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 
+                2px 2px 0 #000,
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                0 2px 0 #000,
+                2px 0 0 #000,
+                0 -2px 0 #000,
+                -2px 0 0 #000,
+                4px 4px 8px rgba(0,0,0,0.5); 
+            backdrop-filter: blur(1px);
+            text-align:left; /* Ensure text is centered */
+            margin-bottom: 20px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mobile menu button */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #5a3b3b;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 16px;
+            }
+            
+            .hero-text {
+                font-size: 64px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                margin: 10px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+            .hero{
+                height: 70vh;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                border-radius: 0 0 10px 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-text {
+                font-size: 90px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+            }
+
+            .photo-grid {
+                width: 200px;
+                right: 10px;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-text {
+                font-size: 36px;
+                padding: 10px 15px;
+            }
+
+            .photo-grid {
+                width: 150px;
+                gap: 5px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+        }
+        .top-section {
+            background-color: #b08968;
+            padding: 40px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .section-image {
+            width: 45%;
+        }
+
+        .section-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .section-content {
+            width: 45%;
+            color: white;
+        }
+
+        .section-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .section-content p {
+            line-height: 1.6;
+        }
+
+        /* Middle Section */
+        .middle-section {
+            background-color: #fdf6f0;
+            padding: 40px 10%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .middle-content {
+            flex: 1;
+        }
+
+        .middle-content h2 {
+            color: #4a3426;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .middle-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .middle-image {
+            flex: 1;
+        }
+
+        .middle-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .view-more {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #d4c0b3;
+            color: #4a3426;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background-color: #b08968;
+            padding: 40px 10%;
+        }
+
+        .gallery-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .top-section, .middle-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .section-image, .section-content,
+            .middle-image, .middle-content {
+                width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <nav class="navbar">
+        <div class="logo">ಬೆಂಗಳೆ</div>
+        <button class="menu-btn">☰</button>
+        <ul class="nav-links">
+            <li><a href="#">ಮುಖಪುಟ</a></li>
+            <li><a href="#">ಗ್ರಾಮದ ಇತಿಹಾಸ</a></li>
+            <li><a href="#">ಗ್ರಾಮದ ಶಾಲೆ</a></li>
+            <li><a href="#">ಜನರು</a></li>
+            <li><a href="#">ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ</a></li>
+        </ul>
+        <button class="btn">ಸಂಪರ್ಕಿಸಿ</button>
+    </nav>
+    <header class="hero">
+        <div class="hero-text">ಬೆಂಗಳೆ</div>
+        <div class="photo-grid">
+            <img src="./history.jpg" alt="Village Scene 1">
+            <img src="./history.jpg" alt="Village Scene 2">
+            <img src="./history.jpg" alt="Village Scene 3">
+            <img src="./history.jpg" alt="Village Scene 4">
+        </div>
+    </header>
+    <section class="top-section">
+        <div class="section-image">
+            <img src="/api/placeholder/600/400" alt="ಗ್ರಾಮದ ಇತಿಹಾಸ">
+        </div>
+        <div class="section-content">
+            <h2>ಶಾಂತ ನೆಲ್ಲು ಗ್ರಾಮ</h2>
+            <p>ಈ ನಮ್ಮ ಗ್ರಾಮದ ಸಮೃದ್ಧ ಇತಿಹಾಸ ಮತ್ತು ಸಂಸ್ಕೃತಿಯ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ. ನಮ್ಮ ಗ್ರಾಮ ಶತಮಾನಗಳಿಂದ ಸಂಪ್ರದಾಯಗಳನ್ನು ಕಾಪಾಡಿಕೊಂಡು ಬಂದಿದೆ.</p>
+        </div>
+    </section>
+
+    <!-- Middle Section - School -->
+    <section class="middle-section">
+        <div class="middle-content">
+            <h2>ಪ್ರಾಚೀನ ಕಲೆಗಳು</h2>
+            <p>ನಮ್ಮ ಗ್ರಾಮದ ಶಾಲೆ ವಿದ್ಯಾರ್ಥಿಗಳ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸುತ್ತಿದೆ. ಇಲ್ಲಿ ಆಧುನಿಕ ಶಿಕ್ಷಣದ ಜೊತೆಗೆ ನಮ್ಮ ಸಂಸ್ಕೃತಿಯನ್ನು ಕಲಿಸಲಾಗುತ್ತದೆ.</p>
+            <a href="#" class="view-more">ಹೆಚ್ಚು ತಿಳಿಯಿರಿ</a>
+        </div>
+        <div class="middle-image">
+            <img src="/api/placeholder/600/400" alt="ಗ್ರಾಮದ ಶಾಲೆ">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-title">
+            <h2>ಗ್ರಾಮದ ದೃಶ್ಯಗಳು</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="ಗ್ರಾಮದ ದೃಶ್ಯ 1">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="ಗ್ರಾಮದ ದೃಶ್ಯ 2">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="ಗ್ರಾಮದ ದೃಶ್ಯ 3">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
